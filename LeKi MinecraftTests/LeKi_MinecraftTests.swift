@@ -1,17 +1,10 @@
-//
-//  LeKi_MinecraftTests.swift
-//  LeKi MinecraftTests
-//
-//  Created by Stephan Thiel on 20.06.25.
-//
-
 import Testing
 @testable import LeKi_Minecraft
 
 struct LeKi_MinecraftTests {
 
-    @Test func example() async throws {
-        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+    @Test func testLoadServerInfo() async throws {
+        let infos = try await NetworkManager.shared.loadServerInfo()
+        #expect(!infos.isEmpty)
     }
-
 }
