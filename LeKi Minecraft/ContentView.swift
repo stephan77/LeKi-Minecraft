@@ -1,21 +1,17 @@
-//
-//  ContentView.swift
-//  LeKi Minecraft
-//
-//  Created by Stephan Thiel on 20.06.25.
-//
-
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            HomeView()
+                .tabItem { Label("Home", systemImage: "house") }
+            ChatView()
+                .tabItem { Label("Chat", systemImage: "bubble.left.and.bubble.right") }
+            ShopView()
+                .tabItem { Label("Shop", systemImage: "cart") }
+            EventsView()
+                .tabItem { Label("Events", systemImage: "calendar") }
         }
-        .padding()
     }
 }
 
